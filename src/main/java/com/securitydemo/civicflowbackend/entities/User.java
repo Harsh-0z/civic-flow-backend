@@ -1,5 +1,6 @@
 package com.securitydemo.civicflowbackend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore   // for ignoring to sending the pw to the frontend
     private String password;
 
     @Enumerated(EnumType.STRING)

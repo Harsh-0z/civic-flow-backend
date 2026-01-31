@@ -5,6 +5,7 @@ import com.securitydemo.civicflowbackend.services.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -42,12 +43,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Public Routes (Login/Register) - Everyone allowed
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/error").permitAll()
 
                         // Admin Routes - Only ADMIN role allowed
                         .requestMatchers("/admin/**").hasRole("ADMIN")
 
-                        // Official Routes - OFFICIAL or ADMIN allowed
-                        .requestMatchers("/official/**").hasAnyRole("OFFICIAL", "ADMIN")
+                        // Official Routes -Only Officials/Admins can update status
+                        .requestMatchers(HttpMethod.PUT, "/issues/**").hasAnyRole("OFFICIAL", "ADMIN")
 
                         // All other routes (e.g., /my-reports) - Must be logged in
                         .anyRequest().authenticated()
