@@ -1,0 +1,335 @@
+/* ========================================
+   Admin Panel Styles
+   ======================================== */
+
+.admin-panel {
+    min-height: 100vh;
+    background: var(--bg-darker);
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-logo {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.admin-logo svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.admin-brand h1 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-primary), #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.admin-brand p {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Stats */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+}
+
+.admin-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 1.25rem;
+}
+
+/* Tabs */
+.admin-tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.admin-tab:hover {
+    color: var(--text-primary);
+}
+
+.admin-tab.active {
+    color: #a855f7;
+    border-bottom-color: #a855f7;
+}
+
+/* Content */
+.admin-content {
+    padding: 2rem;
+}
+
+/* Users Section */
+.users-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.user-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.group-icon {
+    font-size: 1.25rem;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.user-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--primary);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: white;
+}
+
+.user-avatar.citizen {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.user-avatar.official {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.user-avatar.admin {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+}
+
+.user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-email {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.user-dept {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.protected-badge {
+    padding: 0.375rem 0.75rem;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: #a855f7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.empty-state {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.empty-state-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.empty-state-large svg {
+    color: var(--success);
+    margin-bottom: 1rem;
+}
+
+.empty-state-large h3 {
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Issues Section */
+.issues-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.issues-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+}
+
+.issue-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.issue-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.issue-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.issue-content {
+    padding: 1.25rem;
+}
+
+.issue-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.issue-header h4 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.issue-desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.issue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.issue-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.issue-actions .btn {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .admin-stats {
+        padding: 1rem;
+    }
+
+    .admin-tabs {
+        padding: 0 1rem;
+        overflow-x: auto;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
+
+    .issues-list {
+        grid-template-columns: 1fr;
+    }
+}

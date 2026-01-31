@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IssueRepository extends JpaRepository<Issue,Long> {
+public interface IssueRepository extends JpaRepository<Issue, Long> {
     List<Issue> findByReporter(User reporter);
 
     List<Issue> findByStatus(String status);
 
-
+    void deleteByReporter(User reporter);
 }

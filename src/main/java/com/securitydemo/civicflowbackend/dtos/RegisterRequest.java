@@ -7,6 +7,7 @@ import lombok.Data;
 public class RegisterRequest {
     private String email;
     private String password;
-    private Role role;       // "CITIZEN", "OFFICIAL", "ADMIN"
+    private Role role; // "CITIZEN", "OFFICIAL", "ADMIN"
     private String department; // Optional (only for Officials)
+    private String adminToken;
 }
