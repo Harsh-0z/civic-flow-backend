@@ -31,7 +31,7 @@ public class IssueService {
         issue.setLongitude(lng);
         issue.setStatus(IssueStatus.OPEN);
         issue.setReporter(reporter);
-        issue.setImageUrl(imageUrl); // <--- Set the URL!
+        issue.setImageUrl(imageUrl); 
 
         return issueRepository.save(issue);
     }
